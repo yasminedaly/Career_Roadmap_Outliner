@@ -6,7 +6,7 @@ This is a web scraper for Coursera that allows you to extract data on courses an
 To install the scraper, clone the repository to your local machine:
 
 ```
-git clone https://github.com/kimou6055/courseraScraper.git
+git clone https://github.com/yasminedaly/Career_Roadmap_Outliner.git
 ```
 All of the following will be built into a virtualenv
 
