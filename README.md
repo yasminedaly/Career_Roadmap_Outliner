@@ -1,56 +1,46 @@
-# Project Description
 
-## Problematic : 
+## Coursera Scraper
+This is a web scraper for Coursera that allows you to extract data on courses and projects from the website. The scraper is built using Python and the Scrapy framework.
 
-Without a guide plan for learning new job-related skills, individuals may struggle to determine which skills they need to learn and in what order, causing confusion and frustration. They may also lack a clear understanding of what is expected of them in terms of proficiency, leading to uncertainty and anxiety. Additionally, without a guide plan, individuals may find it difficult to stay motivated and focused on their learning journey, potentially causing them to give up on learning the new skills they need for their job.
+## Installation
+To install the scraper, clone the repository to your local machine:
 
+```
+git clone https://github.com/kimou6055/courseraScraper.git
+```
+All of the following will be built into a virtualenv
 
-## Project presentation
+Make sure you have Python 3.x installed on your machine. You can install the required Python libraries by running:
 
-### Summary:
-Our project aims to solve the problem of uncertainty in the user learning journey by creating a recommender system that suggests personalized courses to individuals seeking to acquire new technical skills. The system will use algorithms to analyze a learner's current skillset and learning history, and suggest courses that are relevant and aligned with their career goals. Our solution will tackle SDG 4 (Quality Education) and SDG 8 (Decent Work and Economic Growth). The added value of our project lies in its cost-effectiveness, integration, and versatility. The project will be assessed by conducting user testing and measuring the progress against measurable milestones. We plan to use a hybrid-based filtering recommendation model or a fine-tuned GPT-3 model to address the machine learning problem. We will deploy our app on both web and mobile apps.
+```
+pip install scrapy
+```
 
+## Usage
+To use the scraper, navigate to the coursera-scraper directory then to the spiders folder  and run one of the following commands:
 
+To scrape course data:
 
-## Added values:
+```
+scrapy crawl courseracourseSpider -o courses.json
+```
 
-1. Personalized Learning 
+To scrape project data:
 
-2. Time and Resource Management
+```
+scrapy crawl courseraprojectSpider -o projects.json
+```
+The scraped data will be saved to a JSON file in the spiders directory.
 
-3. Increased Engagement
+## File Structure
+The coursera-scraper directory has the following file structure:
 
-4. Improved Learning Outcomes
-
-5. Analytics and Insights
-
-
-
-
-# Setup
-Here you're gonna outline:
-- The libraries/packages you used (added them in the requirements.txt)
-- Your developement environment (virutal env)
-- Environment variables that you setup (if necessary) 
-
-# Repo Structure
-## Data
-This directory contains:
-- Raw data retrieved from the various sources (scraping, collaborator, etc ...)
-- Processed data: this is the output of the data preparation phase and the input for the modeling phase
-
-## Logs
-For now, this is mainly going to contain simple .txt files logging your model results (parameters, train duration, evaluation, etc ...)
-
-## Models
-- This repository contains your saved model that you will use to for deployment or to reproduce your results 
-- You can use any library of your choice (preferably save them under .pkl format)
-
-## Scripts
-This folder contains any script used to:
-- Retrieve data (example: scraping)
-- Automate any process
-- ...
-
-# Mentions
-Here you can mention any outsider collaborator such as a field expert.
+items.py: defines the data structure for scraped items
+middlewares.py: defines the middleware settings for the scraper
+pipelines.py: defines the pipeline settings for the scraper
+settings.py: defines the global settings for the scraper
+spiders: a directory containing the spider classes for scraping course and project data
+courseracourseSpider.py: the spider class for scraping course data
+courseraprojectSpider.py: the spider class for scraping project data
+courses.json: the JSON file containing scraped course data
+projects.json: the JSON file containing scraped project data
